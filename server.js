@@ -19,9 +19,9 @@ io.sockets.on("connection", function (socket) {
 
   //Disconnect
   socket.on("disconnect", function (data) {
-    // if (!socket.username) return;
+    //if (!socket.username) return;
     users.splice(users.indexOf(socket.username), 1);
-    updateUserNames();
+    updateUsernames();
     connections.splice(connections.indexOf(socket), 1);
     console.log("Disconnected: %s sockets connected", connections.length);
   });
@@ -40,7 +40,7 @@ io.sockets.on("connection", function (socket) {
     updateUsernames();
   });
 
-  function updateUserNames() {
+  function updateUsernames() {
     io.sockets.emit("get users", users);
   }
 });

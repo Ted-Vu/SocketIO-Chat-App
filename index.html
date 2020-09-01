@@ -30,24 +30,24 @@
                 <form id="userForm">
                     <div class="form-group">
                         <label>Enter Username</label>
-                        <textarea class="form-control" id="username">
-                        </textarea>
+                        <input class="form-control" id="username"/>
                         </div></br>
                         <input type="submit" class="btn btn-primary" value="Login"/>
                     </div>
                 </form>
             </div>
         </div>
+    </div>
+    <div class="container">
       <div id="messageArea" class="row">
-        <div class="col-md-4">
+        <div class="col-md-8">
           <div class="alert alert-primary">
             <h3>Online User</h3>
-            <ul class="list-group" id="users"></ul>
+            <ul class="list-group" id="users">ted</ul>
           </div>
         </div>
-        <div class="col-md-8">
+        <div class="col-6 col-md-4">
             <div class="chat" id="chat">
-
             </div>
             <form id="messageForm">
                 <div class="form-group">
@@ -98,12 +98,12 @@
 
             socket.on('get users', function(data){
                 const html = '';
-                for(i=0;i<data.length;++i){
-                    html += '<li class="list-group-item">' + data[i] + '</li>'
+                for(let i=0;i<data.length;++i){
+                    html += '<li class="list-group-item">' + data[i] + '</li>';
                 }
                 $users.html(html);
-            })
-        })
+            });
+        });
     </script>
   </body>
 </html>
